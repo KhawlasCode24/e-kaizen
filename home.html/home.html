@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Cours</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Police plus moderne */
+      background: linear-gradient(135deg, #005bea, #00c6fb);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      margin-top: 20px;
+      z-index: 1;
+    }
+    .header h1 {
+      font-size: 42px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .logo img {
+      width: 120px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    /* Main Container */
+    .main-container {
+      display: flex;
+      height: calc(100vh - 160px);
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Image Section */
+    .image-container {
+      flex: 1;
+      max-width: 50%;
+      overflow: hidden;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      transform: scale(1);
+      transition: transform 0.4s ease-in-out;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-container:hover {
+      transform: scale(1.05);
+    }
+
+    /* Buttons Container */
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+      gap: 30px;
+    }
+    .buttons-container button {
+      padding: 20px 60px;
+      font-size: 22px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #81C733;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 350px;
+    }
+    .buttons-container button:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    .buttons-container button:active {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Bienvenue sur votre plateforme e-kaizen</h1>
+    <div class="logo">
+      <img src="https://kaizen-school.ma/assets/site/img/logo.png" alt="Logo de l'école">
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- Image à gauche, occupant toute la hauteur -->
+    <div class="image-container">
+      <img src="https://fazeducacao.com.br/wp-content/uploads/2023/10/image-94.jpeg" alt="Élève souriant en classe">
+    </div>
+
+    <!-- Boutons à droite -->
+    <div class="buttons-container">
+      <button>Découvrir les cours</button>
+      <a href="login.html">
+        <button>Se connecter</button>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Projet Saad</p>
+    <p>Adresse : 123 Rue de l'École, Casablanca</p>
+    <p>Téléphone : 06 23 45 67 89</p>
+    <p>Email : <a href="mailto:contact@ecole.com">contact@ecole.com</a></p>
+    <a href="#">Mentions légales</a>
+  </footer>
+</body>
+</html>

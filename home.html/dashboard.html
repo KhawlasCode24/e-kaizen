@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - e-Kaizen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #005bea, #00c6fb);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header/Navbar Styles */
+    .navbar {
+      background-color: #222;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo img {
+      width: 120px;
+    }
+    .navbar .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .navbar .menu a {
+      text-decoration: none;
+      padding: 12px 25px;
+      font-size: 17px;
+      font-weight: 600;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      color: #fff;
+      background-color: transparent;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .navbar .menu a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #81C733;
+      z-index: 0;
+      transition: all 0.4s ease;
+    }
+    .navbar .menu a:hover::before {
+      left: 0;
+    }
+    .navbar .menu a:hover {
+      color: #222;
+      border-color: #81C733;
+    }
+    .navbar .menu a span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Dashboard Container */
+    .dashboard-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      gap: 40px;
+      background-image: url('https://pedagoo.com/wp-content/uploads/2020/06/2250x1500_czy-warto-korzystac-ze-szkolen-online-ollh.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .dashboard-container h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cards Styles */
+    .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      align-items: center;
+      flex-direction: row;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      width: 300px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: #333;
+    }
+    .card p {
+      font-size: 17px;
+      margin-bottom: 18px;
+      color: #555;
+    }
+    .card a {
+      color: #81C733;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .card a:hover {
+      color: #005bea;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 30px;
+      color: #fff;
+    }
+    footer a {
+      color: #81C733;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://kaizen-school.ma/assets/site/img/logo.png" alt="Logo de l'école">
+    </div>
+    <div class="menu">
+      <a href="dashboard.html"><span>Tableau de bord</span></a>
+      <a href="profile.html"><span>Mon Profil</span></a>
+      <a id="logout" href="#">Se déconnecter</a>
+    </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-container">
+    <h1>Bienvenue sur ton Tableau de Bord Saad 😊</h1>
+    
+    <div class="cards-wrapper">
+      <div class="card">
+        <h2>Mes Cours</h2>
+        <p>Accédes à tes cours et suis ta progression.</p>
+        <a href="courses.html">Voir mes cours</a>
+      </div>
+
+      <div class="card">
+        <h2>Mes Notifications</h2>
+        <p>Consultes les dernières notifications et mises à jour.</p>
+        <a href="notifications.html" class="active">Mes Notifications</a>
+      </div>
+
+      <div class="card">
+        <h2>Mes Réalisations</h2>
+        <p>Suis tes réussites et tes projets complétés.</p>
+        <a href="achievements.html">Voir mes réalisations</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Projet Saad</p>
+    <p>Adresse : 123 Rue de l'École, Casablanca</p>
+    <p>Téléphone : 06 23 45 67 89</p>
+    <p>Email : <a href="mailto:contact@ecole.com">contact@ecole.com</a></p>
+    <a href="#">Mentions légales</a>
+  </footer>
+
+  <script>
+    // Sélectionnez le bouton de déconnexion
+    const logoutButton = document.getElementById('logout');
+
+    // Ajoutez un événement au clic
+    logoutButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+
+      // Supprimez les données de session (simulé ici avec localStorage)
+      localStorage.clear(); // Si vous utilisez sessionStorage, remplacez par sessionStorage.clear()
+
+      // Redirigez l'utilisateur vers la page de connexion
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

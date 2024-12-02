@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - e-Learning</title>
+  <style>
+    /* Palette de couleurs */
+    :root {
+      --primary-color: #005bea;
+      --secondary-color: #00c6fb;
+      --button-color: #81C733;
+      --hover-color: #66B12F;
+      --background-gradient: linear-gradient(135deg, #005bea, #00c6fb);
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--background-gradient);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .login-container input {
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .login-container input:focus {
+      border-color: var(--primary-color);
+    }
+
+    .login-container button {
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #fff;
+      background: var(--button-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-container button:hover {
+      background: var(--hover-color);
+    }
+
+    .login-container .register-link {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .login-container .register-link a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-container .register-link a:hover {
+      color: var(--hover-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Connexion</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Adresse e-mail" required>
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+    <div class="register-link">
+      Pas encore inscrit ? <a href="register.html">Créer un compte</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Récupération des données
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Validation simple (à adapter pour des validations côté serveur)
+      if (email === "admin@ecole.fr" && password === "1234") {
+        alert("Connexion réussie !");
+        window.location.href = "dashboard.html"; // Redirige vers le tableau de bord
+      } else {
+        alert("E-mail ou mot de passe incorrect !");
+      }
+    });
+  </script>
+</body>
+</html>

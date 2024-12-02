@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Cours - e-Learning</title>
+  <style>
+    /* Palette de couleurs */
+    :root {
+      --primary-color: #005bea;
+      --secondary-color: #00c6fb;
+      --button-color: #81C733;
+      --hover-color: #66B12F;
+      --text-color: #333;
+      --background-gradient: linear-gradient(135deg, #005bea, #00c6fb);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--background-gradient);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #222;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo img {
+      width: 120px;
+    }
+    .navbar .menu {
+      display: flex;
+      gap: 15px;
+    }
+    .navbar .menu a {
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 25px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .navbar .menu a:hover {
+      background-color: var(--primary-color);
+      color: #222;
+    }
+
+    /* Page Header */
+    .header {
+      margin-top: 80px;
+      text-align: center;
+      color: #fff;
+    }
+    .header h1 {
+      font-size: 32px;
+    }
+    .header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    /* Courses Grid */
+    .courses-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-image {
+      height: 150px;
+      background: #e6e6e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .course-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .course-content {
+      padding: 20px;
+      text-align: center;
+    }
+    .course-content h3 {
+      font-size: 20px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    .course-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .course-content button {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #fff;
+      background: var(--button-color);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .course-content button:hover {
+      background: var(--hover-color);
+    }
+    /* Footer */
+    /* Footer */
+footer {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  width: 100%; /* Étend le footer sur toute la largeur */
+  position: relative; /* ou position: absolute; pour fixer en bas */
+  bottom: 0; /* Fixe le footer au bas de la page si positionné en absolute */
+}
+
+    footer a {
+      color: #81C733;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img  style="margin-left: 20px;"src="https://kaizen-school.ma/assets/site/img/logo.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <a href="dashboard.html">Tableau de bord</a>
+      <a href="profile.html">Mon Profil</a>
+      <a id="logout" href="#">Se déconnecter</a> <!-- Ajout de l'id logout -->
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1 style="margin-top: 60px;">Bienvenue dans vos cours Saad</h1>
+    <p>Explorez et continuez votre apprentissage.</p>
+  </div>
+
+  <!-- Courses Grid -->
+  <div class="courses-container">
+    <!-- Exemple de cours -->
+    <div class="course-card">
+      <div class="course-image">
+        <img src="https://la1ere.francetvinfo.fr/image/YujSOf-uUaeUmjjZnQuYJ03SdxY/600x400/outremer/2022/03/28/62421efbe5164_images-4.jfif" alt="Cours 1">
+      </div>
+      <div class="course-content">
+        <h3>Introduction aux Maths</h3>
+        <p>Apprenez les bases de la programmation avec ce cours interactif.</p>
+        <button>Commencer</button>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-image">
+        <img src="https://th.bing.com/th/id/OIP.eA_Mlw0iEHQw5siz3H0d7gHaE7?rs=1&pid=ImgDetMain" alt="Cours 2">
+      </div>
+      <div class="course-content">
+        <h3>Physique&Chimie</h3>
+        <p>Découvrez les principes du Physique&Chimie et composez vos équations chimiques .</p>
+        <button>Commencer</button>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-image">
+        <img src="https://th.bing.com/th/id/OIP.MU-BH73mC8vpIECCyXgSXgHaE6?rs=1&pid=ImgDetMain" alt="Cours 3">
+      </div>
+      <div class="course-content">
+        <h3>Sciences de vie et terre</h3>
+        <p>Maîtrisez les bases des sciences de vie et la terre.</p>
+        <button>Commencer</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Projet Saad</p>
+    <p>Adresse : 123 Rue de l'École, Casablanca</p>
+    <p>Téléphone : 06 23 45 67 89</p>
+    <p>Email : <a href="mailto:contact@ecole.com">contact@ecole.com</a></p>
+    <a href="#">Mentions légales</a>
+  </footer>
+  <script>
+    // Sélectionnez le bouton de déconnexion
+    const logoutButton = document.getElementById('logout');
+
+    // Ajoutez un événement au clic
+    logoutButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+
+      // Supprimez les données de session (simulé ici avec localStorage)
+      localStorage.clear(); // Si vous utilisez sessionStorage, remplacez par sessionStorage.clear()
+
+      // Redirigez l'utilisateur vers la page de connexion
+      window.location.href = 'login.html';
+    });
+  </script>
+
+</body>
+</html>

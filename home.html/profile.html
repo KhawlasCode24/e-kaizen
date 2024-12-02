@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Utilisateur - e-Learning</title>
+  <style>
+    /* Palette de couleurs */
+    :root {
+      --primary-color: #81C733;
+      --secondary-color: #005bea;
+      --text-color: #333;
+      --background-gradient: linear-gradient(135deg, #005bea, #00c6fb);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--background-gradient);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ajuste la hauteur à celle du contenu */
+    }
+
+    /* Header/Navbar Styles */
+    .navbar {
+      background-color: #222;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo img {
+      width: 120px;
+    }
+    .navbar .menu {
+      display: flex;
+      gap: 15px;
+    }
+    .navbar .menu a {
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      color: #fff;
+      background-color: transparent;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .navbar .menu a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #81C733;
+      z-index: 0;
+      transition: all 0.4s ease;
+    }
+    .navbar .menu a:hover::before {
+      left: 0;
+    }
+    .navbar .menu a:hover {
+      color: #222;
+      border-color: #81C733;
+    }
+    .navbar .menu a span {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    /* Profil Container */
+    .profile-container {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      padding: 30px 25px;
+      margin: 120px auto 50px; /* Ajout de marge inférieure */
+      position: relative;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-picture {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background: #e6e6e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: auto;
+    }
+
+    .profile-name {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--secondary-color);
+      margin-top: 15px;
+    }
+
+    .profile-email {
+      font-size: 16px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .actions {
+      margin-top: 20px;
+    }
+
+    .actions button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .actions button:hover {
+      background: #66B12F;
+      transform: translateY(-3px);
+    }
+
+    /* Info Cards */
+    .info-cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      max-width: 250px;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      font-size: 14px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Footer Styles */
+    .footer {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 10px;
+      margin-top: auto; /* Place le footer au bas */
+    }
+
+    .footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://kaizen-school.ma/assets/site/img/logo.png" alt="Logo de l'école">
+    </div>
+    <div class="menu">
+      <a href="dashboard.html">Tableau de bord</a>
+      <a href="profile.html">Mon Profil</a>
+      <a href="logout.html">Se déconnecter</a>
+    </div>
+  </div>
+
+  <!-- Profil Container -->
+  <div class="profile-container">
+    <div class="profile-picture">
+      <img src="C:\Users\USER\Desktop\Saad's code\home.html\assets\Image (5).jpg" alt="Photo de profil">
+    </div>
+    <h2 class="profile-name">Saad Wafiq</h2>
+    <p class="profile-email">Saad.wafiq@kaizen.com</p>
+
+    <!-- Info Cards -->
+    <div class="info-cards">
+      <div class="card">
+        <h3>Progression</h3>
+        <p>80% de vos cours sont terminés. Continuez à apprendre !</p>
+        <a href="#">Voir mes cours</a>
+      </div>
+      <div class="card">
+        <h3>Certificats</h3>
+        <p>2 certificats obtenus ce mois. Félicitations !</p>
+        <a href="#">Voir mes certificats</a>
+      </div>
+      <div class="card">
+        <h3>Notifications</h3>
+        <p>3 nouvelles notifications. Consultez-les maintenant !</p>
+        <a href="#">Voir les notifications</a>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button>Modifier le profil</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Projet Saad</p>
+    <p>Adresse : 123 Rue de l'École, Casablanca</p>
+    <p>Téléphone : 06 23 45 67 89</p>
+    <p>Email : <a href="mailto:contact@ecole.com">contact@ecole.com</a></p>
+    <a href="#">Mentions légales</a>
+  </footer>
+  <script>
+    // Sélectionnez le bouton de déconnexion
+    const logoutButton = document.getElementById('logout');
+
+    // Ajoutez un événement au clic
+    logoutButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+
+      // Supprimez les données de session (simulé ici avec localStorage)
+      localStorage.clear(); // Si vous utilisez sessionStorage, remplacez par sessionStorage.clear()
+
+      // Redirigez l'utilisateur vers la page de connexion
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

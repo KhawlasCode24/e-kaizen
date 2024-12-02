@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Notifications - e-Learning</title>
+  <style>
+    /* Palette de couleurs */
+    :root {
+      --primary-color: #005bea;
+      --secondary-color: #00c6fb;
+      --accent-color: #81C733;
+      --hover-color: #66B12F;
+      --text-color: #333;
+      --background-gradient: linear-gradient(135deg, #005bea, #00c6fb);
+      --notification-bg: #f4f7fd;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--background-gradient);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+     
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #222;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo img {
+      width: 120px;
+    }
+    .navbar .menu {
+      display: flex;
+      gap: 15px;
+    }
+    .navbar .menu a {
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 25px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .navbar .menu a:hover {
+      background-color: var(--primary-color);
+      color: #222;
+    }
+
+
+    /* Header */
+    .header {
+      margin-top: 100px;
+      text-align: center;
+      color: #fff;
+    }
+    .header h1 {
+      font-size: 36px;
+    }
+
+    /* Notifications Section */
+    .content {
+      flex: 1;
+      width: 100%;
+      max-width: 900px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .notifications {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .notification {
+      background: var(--notification-bg);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px var(--shadow-color);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      animation: fadeIn 0.5s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .notification:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px var(--shadow-color);
+    }
+
+    .notification-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    .notification-time {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .mark-read {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .mark-read:hover {
+      background: var(--hover-color);
+    }
+
+    /* Footer */
+   /* Footer */
+footer {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  width: 100%; /* Étend le footer sur toute la largeur */
+  position: relative; /* ou position: absolute; pour fixer en bas */
+  bottom: 0; 
+  margin-top: auto;/* Fixe le footer au bas de la page si positionné en absolute */
+}
+
+    footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://kaizen-school.ma/assets/site/img/logo.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <a href="dashboard.html">Tableau de bord</a>
+      <a href="profile.html">Mon Profil</a>
+      <a id="logout" href="#">Se déconnecter</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Mes Notifications</h1>
+  </div>
+
+  <!-- Notifications Content -->
+  <div class="content">
+    <div class="notifications">
+      <div class="notification">
+        <div>
+          <p class="notification-title">Nouvelle leçon ajoutée : "Identités remarquables"</p>
+          <p class="notification-time">Il y a 2 heures</p>
+        </div>
+        <button class="mark-read">Marquer comme lu</button>
+      </div>
+      <div class="notification">
+        <div>
+          <p class="notification-title">Certificat disponible pour "HTML & CSS"</p>
+          <p class="notification-time">Hier</p>
+        </div>
+        <button class="mark-read">Marquer comme lu</button>
+      </div>
+      <div class="notification">
+        <div>
+          <p class="notification-title">Mise à jour de vos scores de quizz</p>
+          <p class="notification-time">Il y a 3 jours</p>
+        </div>
+        <button class="mark-read">Marquer comme lu</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Projet Saad</p>
+    <p>Adresse : 123 Rue de l'École, Casablanca</p>
+    <p>Téléphone : 06 23 45 67 89</p>
+    <p>Email : <a href="mailto:contact@ecole.com">contact@ecole.com</a></p>
+    <a href="#">Mentions légales</a>
+  </footer>
+  <script>
+    // Sélectionnez le bouton de déconnexion
+    const logoutButton = document.getElementById('logout');
+
+    // Ajoutez un événement au clic
+    logoutButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Empêche le comportement par défaut du lien
+
+      // Supprimez les données de session (simulé ici avec localStorage)
+      localStorage.clear(); // Si vous utilisez sessionStorage, remplacez par sessionStorage.clear()
+
+      // Redirigez l'utilisateur vers la page de connexion
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
